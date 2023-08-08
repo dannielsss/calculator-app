@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { darkColors, lightColors, violetColors } from '../../config/colors';
 
 // Style for screen calculator
-const Screen = styled.div`
+export const Screen = styled.div`
   padding: 2rem 1rem;
   border-radius: 5px;
   text-align: end;
@@ -14,5 +14,3 @@ const Screen = styled.div`
     (props.theme.mode === 'violet' &&
       violetColors.background.toggle_keypad_screen)};
 `;
-
-export default Screen;

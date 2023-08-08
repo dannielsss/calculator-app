@@ -41,7 +41,7 @@ export const darkColors = {
       background: 'hsl(6, 63%, 50%)',
       shadow: 'hsl(6, 70%, 34%)',
     },
-    orange: {
+    white: {
       background: 'hsl(30, 25%, 89%)',
       shadow: 'hsl(28, 16%, 65%)',
     },

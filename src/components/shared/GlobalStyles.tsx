@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { darkColors, lightColors, violetColors } from '../../config/colors';
 
 // For global style similar to index.css
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -23,5 +23,3 @@ const GlobalStyle = createGlobalStyle`
       (props.theme.mode === 'violet' && violetColors.text.light_yellow)};
   }
 `;
-
-export default GlobalStyle;
