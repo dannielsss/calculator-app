@@ -10,10 +10,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
     background: ${(props) =>
       (props.theme.mode === 'light' && lightColors.background.main) ||
       (props.theme.mode === 'dark' && darkColors.background.main) ||
       (props.theme.mode === 'violet' && violetColors.background.main)};
+    color: ${(props) =>
+      (props.theme.mode === 'light' && lightColors.text.grayish) ||
+      (props.theme.mode === 'dark' && darkColors.text.white) ||
+      (props.theme.mode === 'violet' && violetColors.text.white)};
+  }
+
+  button {
     color: ${(props) =>
       (props.theme.mode === 'light' && lightColors.text.grayish) ||
       (props.theme.mode === 'dark' && darkColors.text.white) ||
