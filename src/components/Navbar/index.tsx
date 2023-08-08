@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavbarContent, NavbarToggleTheme } from './styles';
+import { NavbarContent } from './styles';
+import ToggleTheme from './ToggleTheme';
 
 /**
  * Simple navigation for the calculator
@@ -9,7 +10,7 @@ function Navbar() {
   return (
     <NavbarContent>
       <header>calc</header>
-      <NavbarToggleTheme>Toggle theme</NavbarToggleTheme>
+      <ToggleTheme />
     </NavbarContent>
   );
 }
