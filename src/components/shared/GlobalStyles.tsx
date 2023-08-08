@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { darkColors, lightColors, violetColors } from '../../config/colors';
 
 // For global style similar to index.css
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -20,13 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) =>
       (props.theme.mode === 'light' && lightColors.text.grayish) ||
       (props.theme.mode === 'dark' && darkColors.text.white) ||
-      (props.theme.mode === 'violet' && violetColors.text.white)};
-  }
-
-  button {
-    color: ${(props) =>
-      (props.theme.mode === 'light' && lightColors.text.grayish) ||
-      (props.theme.mode === 'dark' && darkColors.text.white) ||
-      (props.theme.mode === 'violet' && violetColors.text.white)};
+      (props.theme.mode === 'violet' && violetColors.text.light_yellow)};
   }
 `;
+
+export default GlobalStyle;

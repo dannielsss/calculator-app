@@ -25,4 +25,8 @@ export const NavbarToggleTheme = styled.button`
     (props.theme.mode === 'dark' && darkColors.background.toggle_keypad) ||
     (props.theme.mode === 'violet' &&
       violetColors.background.toggle_keypad_screen)};
+  color: ${(props) =>
+    (props.theme.mode === 'light' && lightColors.text.grayish) ||
+    (props.theme.mode === 'dark' && darkColors.text.white) ||
+    (props.theme.mode === 'violet' && violetColors.text.light_yellow)};
 `;
