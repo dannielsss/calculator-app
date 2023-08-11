@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCalculator } from './hooks/useCalculator';
 import { Keypad, KeypadContainer } from './components/shared/Keypad';
 import { Container } from './components/shared/Container';
 import { Screen } from './components/shared/Screen';
@@ -9,37 +10,51 @@ import Navbar from './components/Navbar';
  * @returns
  */
 function App() {
+  const {
+    handleDeleteCharacter,
+    handleButtonClick,
+    handleReset,
+    handleResult,
+    screenValue,
+  } = useCalculator();
+
   return (
     <Container>
       <Navbar />
-      <Screen>349+234</Screen>
+      <Screen>{screenValue}</Screen>
       <KeypadContainer>
-        <Keypad>7</Keypad>
-        <Keypad>8</Keypad>
-        <Keypad>9</Keypad>
+        <Keypad onClick={handleButtonClick}>7</Keypad>
+        <Keypad onClick={handleButtonClick}>8</Keypad>
+        <Keypad onClick={handleButtonClick}>9</Keypad>
 
-        <Keypad deleteButton>DEL</Keypad>
+        <Keypad onClick={handleDeleteCharacter} deleteButton>
+          DEL
+        </Keypad>
 
-        <Keypad>4</Keypad>
-        <Keypad>5</Keypad>
-        <Keypad>6</Keypad>
+        <Keypad onClick={handleButtonClick}>4</Keypad>
+        <Keypad onClick={handleButtonClick}>5</Keypad>
+        <Keypad onClick={handleButtonClick}>6</Keypad>
 
-        <Keypad>+</Keypad>
+        <Keypad onClick={handleButtonClick}>+</Keypad>
 
-        <Keypad>1</Keypad>
-        <Keypad>2</Keypad>
-        <Keypad>3</Keypad>
+        <Keypad onClick={handleButtonClick}>1</Keypad>
+        <Keypad onClick={handleButtonClick}>2</Keypad>
+        <Keypad onClick={handleButtonClick}>3</Keypad>
 
-        <Keypad>-</Keypad>
+        <Keypad onClick={handleButtonClick}>-</Keypad>
 
-        <Keypad>.</Keypad>
-        <Keypad>0</Keypad>
-        <Keypad>/</Keypad>
+        <Keypad onClick={handleButtonClick}>.</Keypad>
+        <Keypad onClick={handleButtonClick}>0</Keypad>
+        <Keypad onClick={handleButtonClick}>/</Keypad>
 
-        <Keypad>x</Keypad>
+        <Keypad onClick={handleButtonClick}>x</Keypad>
 
-        <Keypad resetButton>RESET</Keypad>
-        <Keypad resultButton>=</Keypad>
+        <Keypad onClick={handleReset} resetButton>
+          RESET
+        </Keypad>
+        <Keypad onClick={handleResult} resultButton>
+          =
+        </Keypad>
       </KeypadContainer>
     </Container>
   );
