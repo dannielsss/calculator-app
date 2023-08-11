@@ -8,6 +8,7 @@ export const Screen = styled.div<{ theme?: { mode: Themes } }>`
   border-radius: 5px;
   text-align: end;
   width: 100%;
+  height: 93px;
 
   background: ${(props) => COLORS[props.theme.mode].screenBackground};
 `;
