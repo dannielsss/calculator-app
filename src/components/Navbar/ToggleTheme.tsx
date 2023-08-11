@@ -1,22 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { NavbarToggleTheme } from './styles';
-import { ThemeContext } from '../../context/Theme/ThemeContext';
-import { Themes } from '../../types';
+import { useTheme } from '../../hooks/useTheme';
 
 /**
  * Button for toggle theme dark light or violet
  * @returns
  */
 function ToggleTheme() {
-  const { dispatch } = useContext(ThemeContext);
-  const themes: Themes[] = ['light', 'dark', 'violet'];
-  const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
-
-  const handleToggleTheme = () => {
-    const nextIndex = (currentThemeIndex + 1) % themes.length;
-    setCurrentThemeIndex(nextIndex);
-    dispatch({ type: 'TOGGLE_THEME', payload: themes[nextIndex] });
-  };
+  const { handleToggleTheme } = useTheme();
 
   return (
     <NavbarToggleTheme onClick={handleToggleTheme}>
