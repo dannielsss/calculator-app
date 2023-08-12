@@ -15,13 +15,14 @@ function App() {
     handleButtonClick,
     handleReset,
     handleResult,
+    screenElementRef,
     screenValue,
   } = useCalculator();
 
   return (
     <Container>
       <Navbar />
-      <Screen>{screenValue}</Screen>
+      <Screen ref={screenElementRef}>{screenValue}</Screen>
       <KeypadContainer>
         <Keypad onClick={handleButtonClick}>7</Keypad>
         <Keypad onClick={handleButtonClick}>8</Keypad>

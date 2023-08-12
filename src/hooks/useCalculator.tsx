@@ -1,4 +1,4 @@
-import { useState, MouseEvent, useEffect, useCallback } from 'react';
+import { useState, MouseEvent, useEffect, useCallback, useRef } from 'react';
 
 /**
  * Hook for calculator events
@@ -6,6 +6,7 @@ import { useState, MouseEvent, useEffect, useCallback } from 'react';
  */
 export const useCalculator = () => {
   const [screenValue, setScreenValue] = useState('');
+  const screenElementRef = useRef<HTMLDivElement>(null);
 
   /**
    * Function for calculator buttons
@@ -85,8 +86,17 @@ export const useCalculator = () => {
     };
   }, [handleResult]);
 
+  /**
+   * Handle the scroll of the values screen
+   */
+  useEffect(() => {
+    const screenElement = screenElementRef.current;
+    if (screenElement) screenElement.scrollTop = screenElement.scrollHeight;
+  }, [screenValue]);
+
   return {
     screenValue,
+    screenElementRef,
     handleButtonClick,
     handleDeleteCharacter,
     handleReset,

@@ -10,5 +10,8 @@ export const Screen = styled.div<{ theme?: { mode: Themes } }>`
   width: 100%;
   height: 93px;
 
+  overflow-x: auto;
+  overflow-wrap: break-word;
+
   background: ${(props) => COLORS[props.theme.mode].screenBackground};
 `;
