@@ -37,6 +37,8 @@ export const useCalculator = () => {
    * Function to get the result
    */
   const handleResult = useCallback(() => {
+    if (screenValue === '') return;
+
     try {
       const result = String(eval(screenValue.replace('x', '*')));
       setScreenValue(result);
