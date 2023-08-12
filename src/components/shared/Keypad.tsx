@@ -34,6 +34,7 @@ export const Keypad = styled.button<KeypadProps>`
   font-size: 32px;
   font-weight: 700;
   border-radius: 5px;
+  transition: 0.02s ease-in;
 
   grid-column: ${(props) =>
     (props.resetButton && '1/ 3') || (props.resultButton && '3/ 5')};
@@ -59,4 +60,10 @@ export const Keypad = styled.button<KeypadProps>`
         box-shadow: 0px 4px 0px ${COLORS[props.theme.mode].resultButtonShadow};
       `;
   }}
+
+  &:hover {
+    transform: scale(1.08);
+    cursor: pointer;
+    transition: 0.05s ease-in;
+  }
 `;
