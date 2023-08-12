@@ -10,4 +10,12 @@ export const Container = styled.div`
   width: 30%;
   margin: auto;
   height: 100vh;
+
+  @media screen and (max-width: 992px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
