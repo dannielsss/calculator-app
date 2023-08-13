@@ -7,6 +7,6 @@ import { Themes } from '../../types';
 export type Action = { type: 'TOGGLE_THEME'; payload: Themes };
 
 export interface ThemeState {
-  theme: Themes;
+  theme: string;
   dispatch: Dispatch<Action>;
 }
