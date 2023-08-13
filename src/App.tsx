@@ -28,7 +28,7 @@ function App() {
         <Keypad onClick={handleButtonClick}>8</Keypad>
         <Keypad onClick={handleButtonClick}>9</Keypad>
 
-        <Keypad onClick={handleDeleteCharacter} deleteButton>
+        <Keypad onClick={handleDeleteCharacter} $deletebutton>
           DEL
         </Keypad>
 
@@ -50,10 +50,10 @@ function App() {
 
         <Keypad onClick={handleButtonClick}>x</Keypad>
 
-        <Keypad onClick={handleReset} resetButton>
+        <Keypad onClick={handleReset} $resetbutton>
           RESET
         </Keypad>
-        <Keypad onClick={handleResult} resultButton>
+        <Keypad onClick={handleResult} $resultbutton>
           =
         </Keypad>
       </KeypadContainer>

@@ -22,9 +22,9 @@ interface KeypadProps {
   theme?: {
     mode: 'light' | 'dark' | 'violet';
   };
-  deleteButton?: boolean;
-  resetButton?: boolean;
-  resultButton?: boolean;
+  $deletebutton?: boolean;
+  $resetbutton?: boolean;
+  $resultbutton?: boolean;
 }
 
 export const Keypad = styled.button<KeypadProps>`
@@ -37,14 +37,14 @@ export const Keypad = styled.button<KeypadProps>`
   transition: 0.02s ease-in;
 
   grid-column: ${(props) =>
-    (props.resetButton && '1/ 3') || (props.resultButton && '3/ 5')};
+    (props.$resetbutton && '1/ 3') || (props.$resultbutton && '3/ 5')};
 
   color: ${(props) => COLORS[props.theme.mode].buttonText};
   background: ${(props) => COLORS[props.theme.mode].keysBackground};
   box-shadow: 0px 4px 0px ${(props) => COLORS[props.theme.mode].keysShadow};
 
   ${(props) => {
-    if (props.deleteButton || props.resetButton)
+    if (props.$deletebutton || props.$resetbutton)
       return css`
         font-size: 25px;
         color: ${COLORS[props.theme.mode].deleteButtonTextColor};
@@ -52,7 +52,7 @@ export const Keypad = styled.button<KeypadProps>`
         box-shadow: 0px 4px 0px ${COLORS[props.theme.mode].deleteButtonShadow};
       `;
 
-    if (props.resultButton)
+    if (props.$resultbutton)
       return css`
         font-size: 25px;
         color: ${COLORS[props.theme.mode].resultButtonTextColor};
