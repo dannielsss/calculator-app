@@ -7,10 +7,10 @@ import { useTheme } from '../../hooks/useTheme';
  * @returns
  */
 function ToggleTheme() {
-  const { handleToggleTheme } = useTheme();
+  const { handleToggleTheme, toggleButtonRef } = useTheme();
 
   return (
-    <NavbarToggleTheme onClick={handleToggleTheme}>
+    <NavbarToggleTheme onClick={handleToggleTheme} ref={toggleButtonRef}>
       Toggle theme
     </NavbarToggleTheme>
   );
