@@ -1,4 +1,5 @@
 import { useState, MouseEvent, useEffect, useCallback, useRef } from 'react';
+import * as mathjs from 'mathjs';
 
 /**
  * Hook for calculator events
@@ -41,7 +42,7 @@ export const useCalculator = () => {
     if (screenValue === '') return;
 
     try {
-      const result = String(eval(screenValue.replace('x', '*')));
+      const result = String(mathjs.evaluate(screenValue.replace(/x/gm, '*')));
       setScreenValue(result);
     } catch (error) {
       setScreenValue('Syntax error');
